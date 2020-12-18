@@ -1,5 +1,6 @@
 <script>
 	import Header from "./components/Header.svelte";
+	import Content from "./components/Content.svelte";
 	export let name;
 
 	let src = "https://svelte.dev/tutorial/image.gif";
@@ -29,5 +30,6 @@
 <main>
 	<Header {name} />
 	<img {src} alt="Image of {name}" />
+	<Content />
 	<p>{name} has length of {name.length}</p>
 </main>
