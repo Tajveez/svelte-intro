@@ -1,11 +1,9 @@
 <script>
-	export let name;
-</script>
+	import { toUnicode } from "punycode";
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+	export let name;
+	let src = "https://svelte.dev/tutorial/image.gif";
+</script>
 
 <style>
 	main {
@@ -28,3 +26,9 @@
 		}
 	}
 </style>
+
+<main>
+	<h1>Hello {name.length}!</h1>
+	<img {src} alt="Image of {name}" />
+	<!-- <p>This for {name}</p> -->
+</main>
