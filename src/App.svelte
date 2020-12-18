@@ -1,7 +1,7 @@
 <script>
-	import { toUnicode } from "punycode";
-
+	import Header from "./components/Header.svelte";
 	export let name;
+
 	let src = "https://svelte.dev/tutorial/image.gif";
 </script>
 
@@ -13,22 +13,21 @@
 		margin: 0 auto;
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
 	@media (min-width: 640px) {
 		main {
 			max-width: none;
 		}
 	}
+
+	p {
+		color: green;
+		font-family: "Comic Sans MS", cursive;
+		font-size: 2em;
+	}
 </style>
 
 <main>
-	<h1>Hello {name.length}!</h1>
+	<Header {name} />
 	<img {src} alt="Image of {name}" />
-	<!-- <p>This for {name}</p> -->
+	<p>{name} has length of {name.length}</p>
 </main>
