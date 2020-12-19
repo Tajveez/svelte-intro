@@ -1,4 +1,5 @@
 <script>
+    import Login from "./Login.svelte";
     export let name = "User?";
     export let age = "00";
     export let profession = "None";
@@ -13,8 +14,9 @@
     }
 </style>
 
-<main>
+<div>
+    <Login />
     <h1>Hello {name}!</h1>
     <p>Age: {age}</p>
     <p>profession: {profession}</p>
-</main>
+</div>

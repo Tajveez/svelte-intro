@@ -2,6 +2,9 @@
 	import Header from "./components/Header.svelte";
 	import Content from "./components/Content.svelte";
 	import Counter from "./components/Counter.svelte";
+	import Result from "./components/Result.svelte";
+	import Cat from "./components/Cat.svelte";
+
 	export let name;
 	const character = {
 		age: 25,
@@ -33,9 +36,11 @@
 
 <main>
 	<Header {name} {...character} />
-	<Header />
+	<!-- <Header /> -->
 	<img {src} alt="Image of {name}" />
 	<Content />
 	<p>{name} has length of {name.length}</p>
 	<Counter />
+	<Result />
+	<Cat />
 </main>
