@@ -3,7 +3,10 @@
 	import Content from "./components/Content.svelte";
 	import Counter from "./components/Counter.svelte";
 	export let name;
-
+	const character = {
+		age: 25,
+		profession: "Developer",
+	};
 	let src = "https://svelte.dev/tutorial/image.gif";
 </script>
 
@@ -29,7 +32,8 @@
 </style>
 
 <main>
-	<Header {name} />
+	<Header {name} {...character} />
+	<Header />
 	<img {src} alt="Image of {name}" />
 	<Content />
 	<p>{name} has length of {name.length}</p>

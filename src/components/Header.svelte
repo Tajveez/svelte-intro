@@ -1,5 +1,7 @@
 <script>
-    let name = "Not Imported";
+    export let name = "User?";
+    export let age = "00";
+    export let profession = "None";
 </script>
 
 <style>
@@ -13,4 +15,6 @@
 
 <main>
     <h1>Hello {name}!</h1>
+    <p>Age: {age}</p>
+    <p>profession: {profession}</p>
 </main>
