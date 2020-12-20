@@ -4,6 +4,8 @@
 	import Counter from "./components/Counter.svelte";
 	import Result from "./components/Result.svelte";
 	import Cat from "./components/Cat.svelte";
+	import DomEvents from "./components/DomEvents.svelte";
+	import PromiseCode from "./components/PromiseCode.svelte";
 
 	export let name;
 	const character = {
@@ -11,6 +13,9 @@
 		profession: "Developer",
 	};
 	let src = "https://svelte.dev/tutorial/image.gif";
+
+	// for dimensions
+	let m = { x: 0, y: 0 };
 </script>
 
 <style>
@@ -34,7 +39,9 @@
 	}
 </style>
 
-<main>
+<main on:mousemove={(e) => (m = { x: e.clientX, y: e.clientY })}>
+	<DomEvents />
+	<div>Main mouse movement records: x: {m.x} and y: {m.y}</div>
 	<Header {name} {...character} />
 	<!-- <Header /> -->
 	<img {src} alt="Image of {name}" />
@@ -43,4 +50,5 @@
 	<Counter />
 	<Result />
 	<Cat />
+	<PromiseCode />
 </main>
