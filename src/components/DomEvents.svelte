@@ -25,3 +25,10 @@
     {m.x}
     and y:{m.y}
 </div>
+
+<button
+    on:click|once={(e) => {
+        alert('Clicked once.');
+    }}>
+    i can be clicked once!
+</button>
