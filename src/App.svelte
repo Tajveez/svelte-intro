@@ -6,6 +6,7 @@
 	import Cat from "./components/Cat.svelte";
 	import DomEvents from "./components/DomEvents.svelte";
 	import PromiseCode from "./components/PromiseCode.svelte";
+	import Binding from "./components/Binding.svelte";
 
 	export let name;
 	const character = {
@@ -56,4 +57,5 @@
 	<Result />
 	<Cat />
 	<PromiseCode />
+	<Binding />
 </main>
