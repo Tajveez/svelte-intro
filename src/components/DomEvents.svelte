@@ -1,4 +1,6 @@
 <script>
+    import { createEventDispatcher } from "svelte";
+
     let m = {
         x: 0,
         y: 0,
@@ -7,6 +9,14 @@
     function handleMouseMove(e) {
         m.x = e.clientX;
         m.y = e.clientY;
+    }
+
+    const dispatch = createEventDispatcher();
+
+    function fireDispatch() {
+        dispatch("communicate", {
+            text: "This is a special msg!",
+        });
     }
 </script>
 
@@ -32,3 +42,5 @@
     }}>
     i can be clicked once!
 </button>
+
+<button on:click={fireDispatch}> click to dispatch </button>

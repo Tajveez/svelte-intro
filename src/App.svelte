@@ -16,6 +16,11 @@
 
 	// for dimensions
 	let m = { x: 0, y: 0 };
+
+	// handling a custom event
+	function handleCommunication(e) {
+		console.log(e.detail.text);
+	}
 </script>
 
 <style>
@@ -40,7 +45,7 @@
 </style>
 
 <main on:mousemove={(e) => (m = { x: e.clientX, y: e.clientY })}>
-	<DomEvents />
+	<DomEvents on:communicate={handleCommunication} />
 	<div>Main mouse movement records: x: {m.x} and y: {m.y}</div>
 	<Header {name} {...character} />
 	<!-- <Header /> -->
