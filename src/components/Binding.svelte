@@ -25,7 +25,7 @@
     <button disabled={!isChecked}>Start</button>
 </label>
 {#if isChecked}
-    <p>Hurray!</p>
+    <p>Hurray!!!</p>
 {:else}
-    <p>Booooo!!</p>
+    <p>Booooo!!!</p>
 {/if}
