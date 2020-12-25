@@ -1,4 +1,6 @@
 <script>
+    import marked from "marked";
+
     let name = "World";
     let a = 1;
     let b = 1;
@@ -13,6 +15,8 @@
         "Fire Bending",
         "Water Bending",
     ];
+
+    let value = `Some words are *italic*, some are **bold**`;
 </script>
 
 <input bind:value={name} />
@@ -63,3 +67,7 @@
 {:else}
     <p>Your selected power are {powers.join(', ')}</p>
 {/if}
+
+<!-- TextArea Binding -->
+<textarea bind:value />
+{@html marked(value)}
