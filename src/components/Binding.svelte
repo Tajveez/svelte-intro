@@ -17,7 +17,25 @@
     ];
 
     let value = `Some words are *italic*, some are **bold**`;
+
+    // Dimensions binding
+    let w;
+    let h;
+    let size = 42;
+    let text = "Edit this";
 </script>
+
+<style>
+    input {
+        display: block;
+    }
+    div {
+        display: inline-block;
+    }
+    span {
+        word-break: break-all;
+    }
+</style>
 
 <input bind:value={name} />
 <h3>{name}</h3>
@@ -71,3 +89,11 @@
 <!-- TextArea Binding -->
 <textarea bind:value />
 {@html marked(value)}
+
+<input type="range" bind:value={size} />
+<input bind:value={text} />
+<p>{w}px X {h}px</p>
+
+<div bind:clientWidth={w} bind:clientHeight={h}>
+    <span style="font-size: {size}px">{text}</span>
+</div>
