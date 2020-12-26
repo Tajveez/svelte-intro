@@ -7,6 +7,7 @@
 	import DomEvents from "./components/DomEvents.svelte";
 	import PromiseCode from "./components/PromiseCode.svelte";
 	import Binding from "./components/Binding.svelte";
+	import Todo from "./components/Todo.svelte";
 
 	export let name;
 	const character = {
@@ -46,6 +47,7 @@
 </style>
 
 <main on:mousemove={(e) => (m = { x: e.clientX, y: e.clientY })}>
+	<Todo />
 	<DomEvents on:communicate={handleCommunication} />
 	<div>Main mouse movement records: x: {m.x} and y: {m.y}</div>
 	<Header {name} {...character} />
